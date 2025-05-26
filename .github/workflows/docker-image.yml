@@ -1,0 +1,33 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  REGISTRY: "cr.yandex/crp65onqb70atvggsqot"
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: iam
+        password: ${{ secrets.YC_IAM_TOKEN }}
+    
+    - name: Build and push Docker image adservice
+      uses: docker/build-push-action@v6
+      with:
+        file: ./adservice/Dockerfile
+        push: true
+        tags: ${{ env.REGISTRY }}/adservice:latest
