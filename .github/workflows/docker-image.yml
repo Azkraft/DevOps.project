@@ -28,6 +28,6 @@ jobs:
     - name: Build and push Docker image adservice
       uses: docker/build-push-action@v6
       with:
-        file: ./adservice/Dockerfile
+        context: ./adservice
         push: true
         tags: ${{ env.REGISTRY }}/adservice:latest
