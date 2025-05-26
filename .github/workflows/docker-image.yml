@@ -1,10 +1,6 @@
 name: Docker Image CI
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: workflow_dispatch
 
 env:
   REGISTRY: "cr.yandex/crp65onqb70atvggsqot"
@@ -31,3 +27,75 @@ jobs:
         context: ./adservice
         push: true
         tags: ${{ env.REGISTRY }}/adservice:latest
+
+    - name: Build and push Docker image cartservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./cartservice/src
+        push: true
+        tags: ${{ env.REGISTRY }}/cartservice:latest
+
+
+    - name: Build and push Docker image checkoutservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./checkoutservice
+        push: true
+        tags: ${{ env.REGISTRY }}/checkoutservice:latest
+
+    - name: Build and push Docker image currencyservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./currencyservice
+        push: true
+        tags: ${{ env.REGISTRY }}/currencyservice:latest
+
+    - name: Build and push Docker image emailservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./emailservice
+        push: true
+        tags: ${{ env.REGISTRY }}/emailservice:latest
+
+    - name: Build and push Docker image frontend
+      uses: docker/build-push-action@v6
+      with:
+        context: ./frontend
+        push: true
+        tags: ${{ env.REGISTRY }}/frontend:latest
+
+    - name: Build and push Docker image paymentservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./paymentservice
+        push: true
+        tags: ${{ env.REGISTRY }}/paymentservice:latest
+
+    - name: Build and push Docker image productcatalogservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./productcatalogservice
+        push: true
+        tags: ${{ env.REGISTRY }}/productcatalogservice:latest
+
+
+    - name: Build and push Docker image recommendationservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./recommendationservice
+        push: true
+        tags: ${{ env.REGISTRY }}/recommendationservice:latest
+
+    - name: Build and push Docker image shippingservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./shippingservice
+        push: true
+        tags: ${{ env.REGISTRY }}/shippingservice:latest
+
+    - name: Build and push Docker image shoppingassistantservice
+      uses: docker/build-push-action@v6
+      with:
+        context: ./shoppingassistantservice
+        push: true
+        tags: ${{ env.REGISTRY }}/shoppingassistantservice:latest
