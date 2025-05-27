@@ -29,8 +29,5 @@ dependencies:
 - name: shippingservice
   repository: file://../shippingservice/shippingservice
   version: 0.1.0
-- name: redis
-  repository: https://mirror.yandex.ru/helm/charts.bitnami.com/
-  version: 21.0.2
-digest: sha256:1faaec84b8abc4e51b8661060339aa064cbf9dece37a65927bacb687fe77d623
-generated: "2025-05-27T04:04:21.411545919+05:00"
+digest: sha256:f8cb84b612cced55cf1b26185c3c47d5cbb049582bc50592d0fe8050ac3d9960
+generated: "2025-05-27T07:10:52.366653911+05:00"
