@@ -29,7 +29,12 @@ service:
 
 env:
   - name: REDIS_ADDR
-    value: "shopping-redis-master:6379"
+    value: "rc1b-e837npt1m4p3oksq.mdb.yandexcloud.net:6379"
+  - name: REDIS_PASSWD
+    valueFrom:
+        secretKeyRef:
+          name: redis-cred
+          key: redis-passwd
 
 resources: {}
 

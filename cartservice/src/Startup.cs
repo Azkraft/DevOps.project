@@ -27,6 +27,7 @@ namespace cartservice
         public void ConfigureServices(IServiceCollection services)
         {
             string redisAddress = Configuration["REDIS_ADDR"];
+            string redisPasswd = Configuration["REDIS_PASSWD"];
             string spannerProjectId = Configuration["SPANNER_PROJECT"];
             string spannerConnectionString = Configuration["SPANNER_CONNECTION_STRING"];
             string alloyDBConnectionString = Configuration["ALLOYDB_PRIMARY_IP"];
@@ -36,6 +37,7 @@ namespace cartservice
                 services.AddStackExchangeRedisCache(options =>
                 {
                     options.Configuration = redisAddress;
+                    options.Password = redisPasswd;
                 });
                 services.AddSingleton<ICartStore, RedisCartStore>();
             }
