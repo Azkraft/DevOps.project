@@ -39,8 +39,8 @@ shippingservice:
     repository: cr.yandex/crp65onqb70atvggsqot/shippingservice
     tag: "latest"
 
-redis:
-  architecture: standalone
+# redis:
+#   architecture: standalone
 
-  auth:
-    enabled: false
+#   auth:
+#     enabled: false
