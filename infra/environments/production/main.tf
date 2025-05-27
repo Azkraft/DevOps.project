@@ -36,3 +36,7 @@ module "valkey" {
     subnet_id = module.network.subnet_id
     zone = module.network.zone
 }
+
+module "object-storage" {
+    source = "../../modules/object-storage"
+}
