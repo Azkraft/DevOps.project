@@ -1,5 +1,4 @@
 resource "yandex_storage_bucket" "this" {
-  bucket = "static-files"
+  bucket = "azanov-files"
   acl    = "public-read"
-  default_storage_class = "COLD"
 }
