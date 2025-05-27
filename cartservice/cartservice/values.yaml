@@ -29,7 +29,7 @@ service:
 
 env:
   - name: REDIS_ADDR
-    value: "rc1b-e837npt1m4p3oksq.mdb.yandexcloud.net:6379,password=password"
+    value: "rc1b-t075gfh5a1n8e0b8.mdb.yandexcloud.net:6379,password=password"
 
 resources: {}
 
