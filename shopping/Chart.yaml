@@ -1,0 +1,44 @@
+apiVersion: v2
+name: shopping
+description: A Helm chart for Kubernetes
+
+type: application
+
+version: 0.1.0
+
+appVersion: "1.16.0"
+
+dependencies:
+  - name: adservice
+    version: 0.1.0
+    repository: "file://../adservice/adservice"
+  - name: cartservice
+    version: 0.1.0
+    repository: "file://../cartservice/cartservice"
+  - name: checkoutservice
+    version: 0.1.0
+    repository: "file://../checkoutservice/checkoutservice"
+  - name: currencyservice
+    version: 0.1.0
+    repository: "file://../currencyservice/currencyservice"
+  - name: emailservice
+    version: 0.1.0
+    repository: "file://../emailservice/emailservice"
+  - name: frontend
+    version: 0.1.0
+    repository: "file://../frontend/frontend"
+  - name: paymentservice
+    version: 0.1.0
+    repository: "file://../paymentservice/paymentservice"
+  - name: productcatalogservice
+    version: 0.1.0
+    repository: "file://../productcatalogservice/productcatalogservice"
+  - name: recommendationservice
+    version: 0.1.0
+    repository: "file://../recommendationservice/recommendationservice"
+  - name: shippingservice
+    version: 0.1.0
+    repository: "file://../shippingservice/shippingservice"
+  - name: redis
+    version: 21.0.2
+    repository: https://mirror.yandex.ru/helm/charts.bitnami.com/

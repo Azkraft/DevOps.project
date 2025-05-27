@@ -1,0 +1,62 @@
+replicaCount: 1
+
+image:
+  repository: cr.yandex/crp65onqb70atvggsqot/checkoutservice
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 5050
+  name: grpc
+
+env:
+  - name: PORT
+    value: "5050"
+  - name: PRODUCT_CATALOG_SERVICE_ADDR
+    value: "shopping-productcatalogservice:3550"
+  - name: SHIPPING_SERVICE_ADDR
+    value: "shopping-shippingservice:50051"
+  - name: PAYMENT_SERVICE_ADDR
+    value: "shopping-paymentservice:50051"
+  - name: EMAIL_SERVICE_ADDR
+    value: "shopping-emailservice:5000"
+  - name: CURRENCY_SERVICE_ADDR
+    value: "shopping-currencyservice:7000"
+  - name: CART_SERVICE_ADDR
+    value: "shopping-cartservice:7070"
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
