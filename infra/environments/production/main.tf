@@ -29,3 +29,10 @@ module "node_group" {
     cluster_id = module.k8s_cluster.cluster_id
     subnet_id = module.network.subnet_id
 }
+
+module "valkey" {
+    source = "../../modules/valkey"
+    network_id = module.network.network_id
+    subnet_id = module.network.subnet_id
+    zone = module.network.zone
+}
