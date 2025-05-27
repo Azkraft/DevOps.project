@@ -1,0 +1,46 @@
+adservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/adservice
+    tag: "latest"
+cartservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/cartservice
+    tag: "latest"
+checkoutservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/checkoutservice
+    tag: "latest"
+currencyservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/currencyservice
+    tag: "latest"
+emailservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/emailservice
+    tag: "latest"
+frontend:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/frontend
+    tag: "latest"
+paymentservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/paymentservice
+    tag: "latest"
+productcatalogservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/productcatalogservice
+    tag: "latest"
+recommendationservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/recommendationservice
+    tag: "latest"
+shippingservice:
+  image:
+    repository: cr.yandex/crp65onqb70atvggsqot/shippingservice
+    tag: "latest"
+
+redis:
+  architecture: standalone
+
+  auth:
+    enabled: false

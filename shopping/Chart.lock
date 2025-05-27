@@ -1,0 +1,36 @@
+dependencies:
+- name: adservice
+  repository: file://../adservice/adservice
+  version: 0.1.0
+- name: cartservice
+  repository: file://../cartservice/cartservice
+  version: 0.1.0
+- name: checkoutservice
+  repository: file://../checkoutservice/checkoutservice
+  version: 0.1.0
+- name: currencyservice
+  repository: file://../currencyservice/currencyservice
+  version: 0.1.0
+- name: emailservice
+  repository: file://../emailservice/emailservice
+  version: 0.1.0
+- name: frontend
+  repository: file://../frontend/frontend
+  version: 0.1.0
+- name: paymentservice
+  repository: file://../paymentservice/paymentservice
+  version: 0.1.0
+- name: productcatalogservice
+  repository: file://../productcatalogservice/productcatalogservice
+  version: 0.1.0
+- name: recommendationservice
+  repository: file://../recommendationservice/recommendationservice
+  version: 0.1.0
+- name: shippingservice
+  repository: file://../shippingservice/shippingservice
+  version: 0.1.0
+- name: redis
+  repository: https://mirror.yandex.ru/helm/charts.bitnami.com/
+  version: 21.0.2
+digest: sha256:1faaec84b8abc4e51b8661060339aa064cbf9dece37a65927bacb687fe77d623
+generated: "2025-05-27T04:04:21.411545919+05:00"

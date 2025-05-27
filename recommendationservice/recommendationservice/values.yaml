@@ -1,0 +1,54 @@
+replicaCount: 1
+
+image:
+  repository: cr.yandex/crp65onqb70atvggsqot/recommendationservice
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 8080
+  name: grpc
+
+env:
+  - name: PORT
+    value: "8080"
+  - name: PRODUCT_CATALOG_SERVICE_ADDR
+    value: "shopping-productcatalogservice:3550"
+  - name: DISABLE_PROFILER
+    value: "1"
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

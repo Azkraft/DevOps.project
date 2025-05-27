@@ -1,0 +1,79 @@
+replicaCount: 1
+
+image:
+  repository: cr.yandex/crp65onqb70atvggsqot/frontend
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 8080
+  name: http
+
+env:
+  - name: PORT
+    value: "8080"
+  - name: PRODUCT_CATALOG_SERVICE_ADDR
+    value: "shopping-productcatalogservice:3550"
+  - name: CURRENCY_SERVICE_ADDR
+    value: "shopping-currencyservice:7000"
+  - name: CART_SERVICE_ADDR
+    value: "shopping-cartservice:7070"
+  - name: RECOMMENDATION_SERVICE_ADDR
+    value: "shopping-recommendationservice:8080"
+  - name: SHIPPING_SERVICE_ADDR
+    value: "shopping-shippingservice:50051"
+  - name: CHECKOUT_SERVICE_ADDR
+    value: "shopping-checkoutservice:5050"
+  - name: AD_SERVICE_ADDR
+    value: "adservice:9555"
+  - name: SHOPPING_ASSISTANT_SERVICE_ADDR
+    value: "shopping-shoppingassistantservice:80"
+  - name: ENABLE_PROFILER
+    value: "0"
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: 51.250.36.135.nip.io
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
