@@ -54,7 +54,7 @@ ingress:
   className: "nginx"
   annotations: {}
   hosts:
-    - host: 51.250.36.135.nip.io
+    - host: 158.160.184.226.nip.io
       paths:
         - path: /
           pathType: ImplementationSpecific
